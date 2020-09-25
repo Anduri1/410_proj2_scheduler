@@ -7,3 +7,14 @@
 
 //TODO fill in content
 
+PCB get_from_CPU() {
+
+}
+
+void put_on_CPU(PCB  &process) {
+
+}
+
+bool isValidJobOnCPU() {
+
+}
