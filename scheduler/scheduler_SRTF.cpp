@@ -8,19 +8,20 @@
  *     pre-emptive
  */
 
-//TODO fill in content
 
-#include "../includes/scheduler_SRTF.h";
+#include "../includes/scheduler_SRTF.h"
+#include <algorithm>
 
 bool Scheduler_SRTF::time_to_switch_processes(int tick_count, PCB &p) {
-	sort();
+	sort(); //??
 	return Scheduler::time_to_switch_processes(tick_count, p);
 }
 
 void Scheduler_SRTF::sort() {
 	std::vector<PCB> vec;
 	while (!ready_q->empty()) {
-		vec.push_back(ready_q->pop);
+		vec.push_back(ready_q->front());
+		ready_q->pop();
 	}
 	std::sort(vec.begin(), vec.end(), [](PCB & one, PCB & two){return one.remaining_cpu_time < two.remaining_cpu_time;});
 	for(int i = 0; i < vec.size(); i++) {

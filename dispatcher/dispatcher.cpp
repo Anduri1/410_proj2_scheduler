@@ -9,10 +9,9 @@
 
 //#include "PCB.h";
 //#include "CPU.h"
-#include "../includes/dispatcher.h";
+#include "../includes/dispatcher.h"
 
 PCB Dispatcher::get_from_CPU() {
-
 	return cpu->get_process_off_core();
 }
 
