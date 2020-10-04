@@ -62,7 +62,6 @@ int test_simulation(std::string info, Scheduler & s, float av_wait_time,float av
 
 //return value is number of failed tests
 int main(){
-	cout << "HERE!";
 	//cin.ignore();
 	//where all the ready to run processes go
 	std::queue<PCB> ready_Q;
