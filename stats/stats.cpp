@@ -17,7 +17,7 @@ Stats::Stats(std::vector<PCB> &finished_vector): vec(&finished_vector) {
 
 void Stats::showAllProcessInfo() {
 	for (int i = 0; i < vec->size(); i++) {
-		std::cout << "Process " << vec->at(i).process_number << " Required CPU time:" << vec->at(i).required_cpu_time << " arrived:" << vec->at(i).arrival_time << " started:" << vec->at(i).start_time << " finished:" << vec->at(i).finish_time;
+		std::cout << "Process " << vec->at(i).process_number << " Required CPU time:" << vec->at(i).required_cpu_time << "  arrived:" << vec->at(i).arrival_time << " started:" << vec->at(i).start_time << " finished:" << vec->at(i).finish_time;
 	}
 }
 
@@ -43,6 +43,7 @@ void Stats::calcStats() {
 		t_avg += ((vec->at(i).finish_time) - (vec->at(i).arrival_time));
 		w_avg += ((vec->at(i).finish_time) - (vec->at(i).arrival_time) - (vec->at(i).required_cpu_time));
 	}
+
 	av_response_time = (r_avg/(vec->size()));
 	av_turnaround_time = (t_avg/(vec->size()));
 	av_wait_time = (w_avg/(vec->size()));
