@@ -34,9 +34,9 @@ float Stats::get_av_wait_time() {
 }
 
 void Stats::calcStats() {
-	int r_avg = 0;
-	int t_avg = 0;
-	int w_avg = 0;
+	float r_avg = 0.0;
+	float t_avg = 0.0;
+	float w_avg = 0.0;
 
 	for (int i = 0; i < vec->size(); i++) {
 		r_avg += ((vec->at(i).start_time) - (vec->at(i).arrival_time));
